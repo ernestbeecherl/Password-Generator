@@ -2,14 +2,13 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function generatePassword() {
+function generatePassword(){
     alert("Password must contain some of the following characters: uppercase, numbers, and/or at least one special character."); 
     var passwordlength = parseInt(prompt("Please enter a password between 8 and 128 characters for the length of your password")); 
     if (passwordlength < 8 || passwordlength > 128) { // sets min and max 
         alert("PLEASE ENTER PASSWORD BETWEEN 8 AND 128 CHARACTERS")
         return; 
     }
-}
 
 // what kind of characters to use 
 var lowercaseChar = confirm("Would you like to include lower case characters in your password"); 
@@ -22,7 +21,7 @@ console.log (lowercaseChar, uppercaseChar, numberChar, specialChar);
 // at least one of the charactes needs to be used 
 if (!lowercaseChar && !uppercaseChar && !numberChar && !specialChar) {
     alert("PLEASE SELECT AT LEAST ONE CHARACTER TYPE FOR SECURE PASSWORD"); 
-    return; 
+   return; 
 }
 
 // identifying the character types and characterizing 
@@ -60,13 +59,6 @@ console.log (userPassword);
 console.log (userPassword); 
 
 
-
-
-
-
-
-
-
 // generate and randomize the order of characters 
 var newGeneratedPassword = ""; 
 for (var i = 0; i < passwordlength; i++) {
@@ -76,19 +68,7 @@ for (var i = 0; i < passwordlength; i++) {
 console.log(newGeneratedPassword)
     return newGeneratedPassword; 
     // takes input and randonly genreates the new password 
-
-
-/* 
-// write code here
-var length = prompt("Enter password length from 8 to 128 characters"); 
-
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-} 
-*/ 
+}
 
 function writePassword() { 
     var password = generatePassword(); 
@@ -99,4 +79,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
